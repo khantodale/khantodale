@@ -1,0 +1,48 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package bai19tt;
+import java.util.Scanner;
+/**
+ *
+ * @author Khang
+ */
+public class Bai19TT {
+    public static boolean isPrime(int n){
+        if(n<2){
+            return false;
+        }
+        for(int i = 2; i<=Math.sqrt(n); i++){
+            if(n%i == 0){
+             return false;   
+            }
+        }
+        return true;
+    }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+        int m, l;
+        do{
+            System.out.println("Nhap m, l: ");
+             m = sc.nextInt();
+             l = sc.nextInt();
+        }while(m>=l);
+        System.out.print("Nhap he so A, B, C: ");
+        int a, b, c;
+        a = sc.nextInt();
+        b = sc.nextInt();
+        c = sc.nextInt();
+        for(int i = m; i<=l; i++){
+            int tmp = a * i * i + b * i + c;
+            if(isPrime(tmp) == true){
+                System.out.println("x: " + i);
+            }
+        }
+    }
+    
+}

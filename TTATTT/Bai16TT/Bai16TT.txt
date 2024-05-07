@@ -1,0 +1,61 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package bai16tt;
+import java.util.ArrayList;
+import java.util.Random;
+import java.util.Scanner;
+/**
+ *
+ * @author Khang
+ */
+public class Bai16TT {
+    public static boolean isPrime(int n){
+        if(n < 2 ){
+            return false;
+        }
+        for(int i = 2; i<= Math.sqrt(n); i++){
+            if(n%i==0){
+                return false;
+            }
+        }
+        return true;
+    }
+    /**
+     * @param args the command line arguments
+     */
+    public static void handle(int n) {
+
+        Random rd = new Random();
+        ArrayList<Integer> list = new ArrayList<Integer>();
+        for (int i = 0; i < n; i++) {
+            list.add(rd.nextInt(n));
+        }
+        System.out.println("Mang vua tao la");
+        System.out.print("[");
+        for (int i = 0; i < list.size(); i++) {
+            System.out.print(list.get(i) + "\t");
+
+        }
+        System.out.print("]");
+        System.out.println("\n");
+        System.out.println("Cac so nguyen to tu mang tren la");
+        System.out.print("[");
+        for (int i = 0; i < list.size(); i++) {
+            if (isPrime(list.get(i))) {
+                System.out.print(list.get(i) + "\t");
+            }
+        }
+        System.out.print("]");
+
+    }
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Moi nhap so N");
+        int n = sc.nextInt();
+        handle(n);
+        
+    }
+    
+}

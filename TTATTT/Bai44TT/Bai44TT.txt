@@ -1,0 +1,54 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package bai44tt;
+import java.util.Scanner;
+/**
+ *
+ * @author Khang
+ */
+public class Bai44TT {
+    public static int modInverse(int a, int p){
+        int x, x1, x2, y, y1, y2, q, r;
+    x2 = 1;
+    x1 = 0;
+    y1 = 1;
+    y2 = 0;
+    while (p > 0)
+    {
+        q = a / p;
+        r = a%p;
+        x = x2 - q * x1;
+        y = y2 - q * y1;
+
+        a = p;
+        p = r;
+        x2 = x1;
+        x1 = x;
+        y2 = y1;
+        y1 = y;
+    }
+    x = x2;
+    y = y2;
+
+    return x;
+    }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+        int a, p, inverse;
+        System.out.println("Nhap 2 so a, p: ");
+        a = sc.nextInt();
+        p = sc.nextInt();
+        inverse = modInverse(a, p);
+        if(inverse < 0){
+            inverse += p;
+        }
+        System.out.println("Nghich dao "+ a + " trong truong F "+ p + " la: " + inverse  );
+    }
+    
+}

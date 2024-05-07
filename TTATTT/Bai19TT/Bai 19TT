@@ -1,0 +1,6 @@
+run:
+Nhap m, l: 
+5 10
+Nhap he so A, B, C: 2 3 4
+x: 9
+BUILD SUCCESSFUL (total time: 6 seconds)

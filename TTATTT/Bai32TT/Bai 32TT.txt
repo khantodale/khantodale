@@ -1,0 +1,7 @@
+Nhap sbd: 154486
+61469
+54809
+Press any key to continue . . .
+
+Process returned 0 (0x0)   execution time : 6.417 s
+Press any key to continue.

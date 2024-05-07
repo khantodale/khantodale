@@ -1,0 +1,5 @@
+run:
+Nhap N: 30
+Nhap he so cua A, B, C: 2 3 6
+x can tim la: 2
+BUILD SUCCESSFUL (total time: 50 seconds)

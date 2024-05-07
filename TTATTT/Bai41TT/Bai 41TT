@@ -1,0 +1,7 @@
+run:
+Nhap a, k ,n: 
+10
+6
+20
+10^6 mod 20 khong la so nguyen to
+BUILD SUCCESSFUL (total time: 4 seconds)

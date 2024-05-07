@@ -1,0 +1,42 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package bai6tt;
+import java.util.Scanner;
+/**
+ *
+ * @author Khang
+ */
+public class Bai6TT {
+
+    /**
+     * @param args the command line arguments
+     */
+     public static void main(String[] args) {
+        int N, sum, tmp;
+        Scanner sc = new Scanner(System.in);
+        System.out.print("Nhap so N duong: ");
+        N = sc.nextInt();
+        for(int i = 1; i<N; i++){
+            sum = 0;
+            for(int j = 1; j<i; j++){
+                if(i%j==0){
+                sum += j;
+                }
+            }
+        
+        tmp = sum;
+        sum = 0;
+        for(int t = 1; t<tmp; t++){
+            if(tmp % t == 0){
+                sum += t;
+            }
+            
+        }
+        if(i == sum && i < tmp){
+            System.out.println(i + " " + tmp);
+            }       
+        }
+     }
+}

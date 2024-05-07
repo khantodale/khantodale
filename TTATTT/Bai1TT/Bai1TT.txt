@@ -1,0 +1,40 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package bai1tt;
+import java.util.Scanner;
+/**
+ *
+ * @author Khang
+ */
+public class Bai1TT {
+public static int check(int n){
+    int d =2;
+    for(int i = 2; i < n -1; i++){
+        if(n % i == 0){
+            d += 1;
+        }
+    }
+    return d;
+}
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        int n, d;
+        Scanner sc = new Scanner(System.in);
+        do{
+            System.out.println("Nhap n");
+            n = sc.nextInt();
+        }while(n<0);
+        for(int i = 0;i < n; i++){
+            int val = check(i);
+            if(val == 4){
+                System.out.println(i + " Q - Prime");
+            }
+        }
+    }
+    
+}

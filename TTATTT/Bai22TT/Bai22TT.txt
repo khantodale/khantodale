@@ -1,0 +1,52 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package bai22tt;
+import java.util.Scanner;
+/**
+ *
+ * @author Khang
+ */
+public class Bai22TT {
+    public static boolean isPrime(int n){
+    if(n<2){
+        return false;
+    }
+    for(int i = 2; i<= Math.sqrt(n); i++){
+        if(n % i == 0){
+            return false;
+        }
+    }
+    return true;
+}
+    public static int getF(int n){
+        if(isPrime(n)){
+            return n;
+        }
+        else{
+            return 0;
+        }
+    }
+    
+
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc = new Scanner(System.in);
+        int l, r;
+        System.out.println("Nhap l, r: ");
+        l = sc.nextInt();
+        r = sc.nextInt();
+        int sum = 0;
+        for(int i = l; i<r; i++){
+            for(int j = i+1; j<= r; j++){
+                sum += getF(i) * getF(j);
+            }
+        }
+        System.out.println(sum);
+    }
+    
+}

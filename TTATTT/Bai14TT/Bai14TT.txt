@@ -1,0 +1,51 @@
+/*
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+ * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Main.java to edit this template
+ */
+package bai14tt;
+import java.util.Scanner;
+/**
+ *
+ * @author Khang
+ */
+public class Bai14TT {
+    public static boolean isPrime(int n){
+        if(n<2){
+            return false;
+        }
+        for(int i = 2; i<=Math.sqrt(n);i++){
+            if(n%i == 0){
+                return false;
+            }
+        }
+        return true;
+    }
+    public static int reverse(int n){
+        int reverse = 0;
+        int digit;
+        while(n>0){
+            digit = n % 10;
+            reverse = reverse * 10 + digit;
+            n = n/10;
+        }
+        return reverse;
+    }
+    /**
+     * @param args the command line arguments
+     */
+    public static void main(String[] args) {
+        // TODO code application logic here
+        Scanner sc =  new Scanner(System.in);
+        for(int i = 100; i< 1000; i++){
+            if(isPrime(i) == true){
+                int tmp = reverse(i);
+                for(int j = 1; j<= Math.sqrt(tmp); j++){
+                    if(j * j * j == tmp){
+                        System.out.println("So can tim la: " + i);
+                    }
+                }
+            }
+        }
+    }
+    
+}
